@@ -13,6 +13,28 @@ A reusable visual style system for building consistent, professional Canvas cour
 2. Ask it to follow the conventions in `canvas-html-style-guide.md` for any new section, table, card, or callout it writes.
 3. If you want to see what something looks like before publishing, ask the assistant to add it to a copy of `canvas-design-kit.html` and paste that into a Canvas page to preview.
 
+## Viewing the design kit
+
+Don't just double-click `canvas-design-kit.html` and open it in a browser -- it'll look plain and show up in Times New Roman, since none of Canvas's page styling is applied outside of Canvas itself.
+
+Instead:
+
+1. In Canvas, go to **Pages > + Page** to create a new (unpublished) page.
+2. Give it a name like "Design Kit Preview" and leave it unpublished -- students won't see it.
+3. Click the **</> HTML Editor** option in the page editor.
+4. Paste the entire contents of `canvas-design-kit.html` into the HTML editor.
+5. Click **Save**.
+
+You should now see every component (headings, cards, tables, callouts, etc.) rendered the way it will actually look to students.
+
+## Feedback and customization
+
+If you'd like to tweak colors, add new components, or request additional styles, let me know -- I'm happy to add them so we can keep working from a single, cohesive design.
+
+## Using this with Claude (or another AI assistant)
+
+As you port your existing course pages into Canvas, share `canvas-html-style-guide.md` (and `canvas-design-kit.html` for reference) with Claude and tell it to write each new page following this style. Since every page pulls from the same rules and color palette, your pages will end up looking consistent with each other -- like they belong to the same course -- even though they're generated one at a time.
+
 ## Key rules to know before you start
 
 - **No `<style>` blocks.** Canvas strips them on save -- all styling must be inline `style=""` attributes.
