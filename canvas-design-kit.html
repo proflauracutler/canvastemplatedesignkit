@@ -1,0 +1,385 @@
+<!--
+  Canvas Design Kit
+  =========================
+  PURPOSE: A single reference page showing every reusable visual component
+  (headings, cards, tables, callouts, etc.) using the unified "cool palette"
+  color system. Paste this into a Canvas page to preview how everything looks
+  together, then iterate with Claude on colors/spacing here BEFORE applying
+  the same patterns to other module pages.
+
+  This page is intentionally course-agnostic -- all examples below use
+  generic placeholder content so this file can be shared with other
+  instructors/courses to keep a consistent Canvas look, regardless of
+  subject matter.
+
+  ENCODING: ASCII only -- no smart quotes, em dashes, ellipsis, or other
+  UTF-8 special characters. Use -- for em dash, straight quotes, ... for ellipsis.
+
+  CANVAS RULES:
+  - No <style> blocks -- Canvas strips them. ALL styling is inline style="".
+  - No SVG -- use PNG images for diagrams.
+  - Font Awesome 5 is loaded via the <link> tag below.
+
+  -----------------------------------------------------------------------
+  ACCESSIBILITY / DARK MODE RULE
+  -----------------------------------------------------------------------
+  Any element with an inline `background` or `background-color` MUST also
+  set an explicit `color`. Canvas dark mode forces page text to a light
+  color but leaves explicit inline colors alone -- so a light background
+  with no explicit text color becomes invisible (light text on a light
+  box) once a student switches to dark mode. Default body text color
+  is #333.
+
+  -----------------------------------------------------------------------
+  COLOR SYSTEM (cool palette only -- no orange/yellow, red used sparingly
+  for true error/warning states)
+  -----------------------------------------------------------------------
+
+  PRIMARY (brand / headers / default emphasis)
+    Navy        border #002e5d   bg #f0f4f8   title text #002e5d
+
+  ACCENT PALETTE (use for the 4-up card layouts, in this order)
+    1. Navy        border #002e5d   bg #f0f4f8   title text #002e5d
+    2. Steel Blue  border #2563eb   bg #eff6ff   title text #1e40af
+    3. Indigo      border #5b21b6   bg #f5f3ff   title text #5b21b6
+    4. Teal        border #0d9488   bg #f0fdfa   title text #0f766e
+    5. Gray        border #6b7280   bg #f9fafb   title text #374151
+
+  Note: Gray (a true neutral, no blue tint) replaced a blue-gray "slate"
+  because slate read as too similar to navy at a glance. Gray is placed
+  last in the rotation (rather than 2nd) so navy is never followed
+  directly by another low-saturation neutral.
+
+  STATUS COLORS (use sparingly, only when meaning is "correct/incorrect"
+  or "go/stop")
+    Good / correct   border #16a34a   bg #f0fdf4   title text #15803d
+    Needs work / avoid  border #9f1239   bg #fef2f2   title text #9f1239
+    (Use the rose/"needs work" color only when something is actually
+    wrong or risky -- not as a routine 4th card color.)
+
+  NEUTRAL TEXT / LINES
+    Body text   #333333
+    Table borders / dividers   #d0dae8
+    Banded row tint   #f0f4f8
+
+  -----------------------------------------------------------------------
+  TABLE RULES (apply to every table type below)
+  -----------------------------------------------------------------------
+  - Header row: solid color background (navy by default, or the
+    status color for two-column "avoid/do this" tables), white or
+    dark text as appropriate, border color matches the header
+    background so the header reads as one solid block.
+  - Body cells: 1px solid #d0dae8 border on every cell.
+  - Banding: only alternate row colors when a table has MORE than 2
+    body rows, starting with light blue (#f0f4f8), then white
+    (#ffffff), repeating. Tables with 1-2 body rows are not banded --
+    all body rows are plain white (#ffffff).
+
+  -----------------------------------------------------------------------
+  COMPONENT INDEX (jump to each section below)
+  -----------------------------------------------------------------------
+  1. Page header
+  2. Section heading (dp-has-icon, line-and-icon divider)
+  3. Callout boxes (key rule, tip, warning)
+  4. Blockquote / template format
+  5. Multi-color cards (small groups of related items, 5-color rotation)
+  6. Numbered step blocks
+  7. Standard data table (sequences, comparisons, rubrics -- one shared
+     style, with notes on optional summary row and points column)
+  8. Two-column "avoid vs do this" comparison table
+  9. Code blocks (<pre><code>, 16px)
+  10. Interactive elements (reveal answer, "Try It" embedded sandbox)
+-->
+
+<div id="dp-wrapper" class="dp-wrapper dp-flat-sections variation-2">
+
+  <header class="dp-header dp-basic-bar" style="background-color: #002e5d; color: #ffffff;">
+    <h2 class="dp-heading" style="background-color: #002e5d; color: #ffffff;">
+      Design Kit - Visual Style Reference
+    </h2>
+  </header>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- ================================================================= -->
+  <!-- 1. INTRO -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-palette" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>How to Use This Page
+    </h3>
+    <p>This page is a living style reference, not a real reading. Every component below uses the same color system so all module pages look like they belong to one course. When you want to tweak something (a color, a spacing value, a card style), say so and Claude will update this page first -- once it looks right here, the same change gets applied across the other modules.</p>
+    <p style="background-color: #f0f4f8; border-left: 4px solid #002e5d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <strong>Color rule of thumb:</strong> Navy is the default. Steel blue, indigo, teal, and gray are the supporting accent colors for cards and variety. Green means "correct / good," and the muted rose/red means "needs work / avoid" -- use that sparingly and only when something is actually a mistake to flag.
+    </p>
+    <p style="background-color: #fef2f2; border-left: 4px solid #9f1239; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <strong>Dark mode rule:</strong> Anytime an element sets a <code>background</code> or <code>background-color</code>, also set an explicit <code>color</code> in the same style. Canvas's dark mode rewrites text color but not backgrounds, so a light box without an explicit text color turns into light text on a light box and disappears.
+    </p>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 2. SECTION HEADING DEMO -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-heading" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Section Heading Style
+    </h3>
+    <p>Every major section uses this heading style: a Font Awesome icon in a circle, followed by a horizontal line, then the title. Always use navy (<code>#002e5d</code>) for the icon and line color. Only the icon name and the title text change between sections.</p>
+    <p style="background-color: #f8fafc; border-left: 4px solid #475569; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; font-size: 0.92em; color: #333;">
+      Common icons: fa-book-reader (intro/reading), fa-bullseye (purpose/goals), fa-list-ol (instructions/steps), fa-lightbulb (key concepts), fa-chart-bar (data/analysis), fa-comments (discussion), fa-tasks (assignments), fa-paper-plane (submission), fa-check-square (grading), fa-puzzle-piece (synthesis/closing), fa-search (research), fa-sitemap (systems/structure)
+    </p>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 3. CALLOUT BOXES -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-info-circle" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Callout Boxes
+    </h3>
+    <p>Three callout types, used sparingly. Default to the navy "key rule" box for most callouts -- the other two are for genuinely distinct situations.</p>
+
+    <p style="background-color: #f0f4f8; border-left: 4px solid #002e5d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <strong>Key Rule:</strong> The default callout. Use for important rules, definitions to remember, or framing statements.
+    </p>
+
+    <p style="background-color: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <strong>Tip:</strong> Use teal for helpful tips, shortcuts, or "in practice" notes that are useful but not essential.
+    </p>
+
+    <p style="background-color: #fef2f2; border-left: 4px solid #9f1239; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <strong>Watch Out:</strong> Use the muted rose/red callout only for real warnings -- common mistakes that will cost students points, or steps that are easy to get wrong.
+    </p>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 4. BLOCKQUOTE -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-quote-left" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Blockquote
+    </h3>
+    <p>Use for direct quotes from personas or stakeholders.</p>
+
+    <blockquote style="border-left: 4px solid #002e5d; background: #f0f4f8; font-style: italic; padding: 12px 20px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      "Quote text goes here, in the voice of a persona or stakeholder."
+      <cite style="display: block; margin-top: 6px; font-style: normal; font-size: 0.9em; color: #555;">- Speaker Name, Title</cite>
+    </blockquote>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 5. MULTI-COLOR CARDS -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-th-large" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Multi-Color Cards (Small Groups of Related Items)
+    </h3>
+    <p>Use this layout for any small set of categories, phases, or principles that belong together as a group. The 5 colors below are a single rotation -- cycle through them in order. Navy and gray (both low-saturation neutrals) are placed at opposite ends of the rotation so they never sit side by side. If a framework has more than 5 parts, start the rotation over: item 6 is navy again, item 7 is steel blue again, and so on.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">
+      <div style="flex: 1; min-width: 160px; border-left: 5px solid #002e5d; background: #f0f4f8; padding: 14px 16px; border-radius: 0 6px 6px 0; color: #333;">
+        <div style="font-size: 1.05em; color: #002e5d; margin-bottom: 6px; font-weight: bold;">1. Navy</div>
+        <p style="margin: 0; font-size: 0.95em; color: #333;">Primary slot. The first item, or the most important one.</p>
+      </div>
+      <div style="flex: 1; min-width: 160px; border-left: 5px solid #2563eb; background: #eff6ff; padding: 14px 16px; border-radius: 0 6px 6px 0; color: #333;">
+        <div style="font-size: 1.05em; color: #1e40af; margin-bottom: 6px; font-weight: bold;">2. Steel Blue</div>
+        <p style="margin: 0; font-size: 0.95em; color: #333;">A brighter blue that's still distinct from navy.</p>
+      </div>
+      <div style="flex: 1; min-width: 160px; border-left: 5px solid #5b21b6; background: #f5f3ff; padding: 14px 16px; border-radius: 0 6px 6px 0; color: #333;">
+        <div style="font-size: 1.05em; color: #5b21b6; margin-bottom: 6px; font-weight: bold;">3. Indigo</div>
+        <p style="margin: 0; font-size: 0.95em; color: #333;">A deeper, cooler accent for the third slot.</p>
+      </div>
+      <div style="flex: 1; min-width: 160px; border-left: 5px solid #0d9488; background: #f0fdfa; padding: 14px 16px; border-radius: 0 6px 6px 0; color: #333;">
+        <div style="font-size: 1.05em; color: #0f766e; margin-bottom: 6px; font-weight: bold;">4. Teal</div>
+        <p style="margin: 0; font-size: 0.95em; color: #333;">Adds a touch of color without leaving the cool family.</p>
+      </div>
+      <div style="flex: 1; min-width: 160px; border-left: 5px solid #6b7280; background: #f9fafb; padding: 14px 16px; border-radius: 0 6px 6px 0; color: #333;">
+        <div style="font-size: 1.05em; color: #374151; margin-bottom: 6px; font-weight: bold;">5. Gray</div>
+        <p style="margin: 0; font-size: 0.95em; color: #333;">A true neutral that closes out the rotation before it repeats from navy.</p>
+      </div>
+    </div>
+
+    <p style="font-size: 0.92em; color: #555;">Most frameworks have 3-4 parts, so in practice you'll usually only use colors 1-4 (Navy, Steel Blue, Indigo, Teal). The 5-color rotation exists so that if something has 5+ parts, you have a defined order to follow instead of picking colors ad hoc.</p>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 6. NUMBERED STEP BLOCKS -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-list-ol" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Numbered Step Blocks (Assignments)
+    </h3>
+    <p>Use for step-by-step assignment instructions. Alternate the background between <code>#f0f4f8</code> and <code>#ffffff</code> for readability. The circle and left border are always navy.</p>
+
+    <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; background: #f0f4f8; border-left: 5px solid #002e5d; border-radius: 0 6px 6px 0; padding: 16px 20px; color: #333;">
+      <div style="background: #002e5d; color: #fff; font-weight: bold; border-radius: 50%; min-width: 30px; width: 30px; height: 30px; line-height: 30px; text-align: center; font-size: 0.88em; flex-shrink: 0;">1</div>
+      <div>
+        <div style="font-weight: bold; color: #002e5d; font-size: 1.05em; margin-bottom: 6px;">Step Title</div>
+        <p style="margin: 0; font-size: 0.95em; line-height: 1.6; color: #333;">Step body text describing what the student should do.</p>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; background: #ffffff; border-left: 5px solid #002e5d; border-radius: 0 6px 6px 0; padding: 16px 20px; color: #333;">
+      <div style="background: #002e5d; color: #fff; font-weight: bold; border-radius: 50%; min-width: 30px; width: 30px; height: 30px; line-height: 30px; text-align: center; font-size: 0.88em; flex-shrink: 0;">2</div>
+      <div>
+        <div style="font-weight: bold; color: #002e5d; font-size: 1.05em; margin-bottom: 6px;">Second Step Title</div>
+        <p style="margin: 0; font-size: 0.95em; line-height: 1.6; color: #333;">Background alternates to white for the second step, back to light navy for the third, and so on.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 7. STANDARD DATA TABLE (sequences, comparisons, rubrics) -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-table" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Standard Data Table
+    </h3>
+    <p>One shared table style covers step-by-step sequences, side-by-side comparisons, and rubric/grading tables. All of them use: a solid navy header row with white text and matching navy borders, body cells bordered in light blue-gray (<code>#d0dae8</code>), and banding only when there are more than 2 body rows -- alternating <code>#f0f4f8</code> then <code>#ffffff</code>, starting with <code>#f0f4f8</code>. With 2 or fewer body rows, skip banding and make every row <code>#ffffff</code>.</p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em;">
+      <thead>
+        <tr>
+          <th style="background: #002e5d; color: #ffffff; padding: 10px 14px; text-align: left; border: 1px solid #002e5d;">Item</th>
+          <th style="background: #002e5d; color: #ffffff; padding: 10px 14px; text-align: left; border: 1px solid #002e5d;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #f0f4f8; color: #333;">
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; font-weight: bold; color: #002e5d; white-space: nowrap; vertical-align: top;">First item</td>
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; vertical-align: top;">Description text for the first row.</td>
+        </tr>
+        <tr style="background: #ffffff; color: #333;">
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; font-weight: bold; color: #002e5d; white-space: nowrap; vertical-align: top;">Second item</td>
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; vertical-align: top;">Description text for the second row.</td>
+        </tr>
+        <tr style="background: #f0f4f8; color: #333;">
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; font-weight: bold; color: #002e5d; white-space: nowrap; vertical-align: top;">Third item</td>
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8; vertical-align: top;">Description text for the third row.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size: 0.92em; color: #555;"><strong>Variations on this same table:</strong></p>
+    <ul style="font-size: 0.92em; color: #555;">
+      <li><strong>More columns (comparisons):</strong> add more header/cell columns -- e.g., "Aspect / Option A / Option B." Same header, border, and banding rules apply.</li>
+      <li><strong>Centered points column (rubrics):</strong> add a "Points" column and center-align both the header and the cells in that column.</li>
+      <li><strong>2 or fewer body rows:</strong> drop the banding -- make every row <code>background: #ffffff; color: #333;</code>.</li>
+    </ul>
+
+    <p style="font-size: 0.92em; color: #555;"><strong>If there's a summary or conclusion row at the bottom</strong> (common for sequences that build to a takeaway), add one final row spanning all columns, styled solid navy with white text:</p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em;">
+      <tbody>
+        <tr>
+          <td style="padding: 12px 16px; font-weight: bold; color: #ffffff; background: #002e5d; border: 1px solid #002e5d; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap;">Conclusion</td>
+          <td style="padding: 12px 16px; background: #002e5d; color: #ffffff; border: 1px solid #002e5d; font-weight: bold;">The takeaway the sequence builds toward.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 8. AVOID VS DO THIS COMPARISON TABLE -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-balance-scale" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>"Avoid vs. Do This" Comparison Table
+    </h3>
+    <p>Use this when you need to contrast a wrong/weak approach with a correct/strong one (e.g., vague vs. precise requirements). Only the header row carries color -- rose for "Avoid," green for "Do This Instead." With 2 body rows, no banding is used -- both rows share the same uniform background.</p>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em;">
+      <thead>
+        <tr>
+          <th style="background: #fef2f2; color: #9f1239; padding: 10px 14px; text-align: left; border: 1px solid #fecaca; width: 50%;">
+            <i class="fas fa-times-circle" style="margin-right: 6px;" aria-hidden="true"></i>Avoid
+          </th>
+          <th style="background: #f0fdf4; color: #15803d; padding: 10px 14px; text-align: left; border: 1px solid #bbf7d0; width: 50%;">
+            <i class="fas fa-check-circle" style="margin-right: 6px;" aria-hidden="true"></i>Do This Instead
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #ffffff; color: #333;">
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8;">"Make sure students understand the requirements."</td>
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8;">"List each requirement as a separate numbered item, with one sentence describing what 'done' looks like for that item."</td>
+        </tr>
+        <tr style="background: #ffffff; color: #333;">
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8;">"Give feedback on the draft."</td>
+          <td style="padding: 10px 14px; border: 1px solid #d0dae8;">"Identify one specific sentence or section that is unclear, and explain what question it leaves unanswered."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 9. CODE BLOCKS -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-code" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Code Blocks
+    </h3>
+    <p>For any block of source code, use Canvas's default <code>&lt;pre&gt;&lt;code&gt;</code> styling (background, border, and text color all left as-is) and only bump the font size to 16px -- Canvas's default monospace size renders too small.</p>
+
+    <pre style="font-size: 16px;"><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("world"))</code></pre>
+
+    <p style="font-size: 0.92em; color: #555;">For a short inline code reference within a sentence, use <code>inline_code()</code> with Canvas's default styling -- no extra background or color needed.</p>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 10. INTERACTIVE ELEMENTS (details/summary) -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-mouse-pointer" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Interactive Elements (Details / Summary)
+    </h3>
+    <p>Canvas renders native <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> as an expandable disclosure widget with no JavaScript required. Use it to let students reveal an answer, or to embed a runnable "Try It" code sandbox.</p>
+
+    <h4 style="color: #002e5d; margin-top: 1.4em; margin-bottom: 0.4em;">Reveal an Answer</h4>
+    <details style="margin: 16px 0;">
+      <summary style="cursor: pointer; font-weight: bold; color: #002e5d;">Show Answer</summary>
+      <div style="padding: 12px 16px; margin-top: 8px; background: #f0f4f8; border-left: 4px solid #002e5d; border-radius: 0 6px 6px 0; color: #333;">
+        <p style="margin: 0;">The answer text goes here. Students click the summary line to expand this box.</p>
+      </div>
+    </details>
+
+    <h4 style="color: #002e5d; margin-top: 1.4em; margin-bottom: 0.4em;">"Try It" Embedded Code Sandbox (Trinket)</h4>
+    <p>Trinket embeds require a saved trinket -- you can't pass arbitrary code through the URL. To create one: go to <a href="https://trinket.io" style="color: #2563eb;">trinket.io</a>, start a new trinket in the language you need, write and save the starter code, then click <strong>Embed</strong> (or <strong>Share &gt; Embed</strong>) and copy the URL it gives you. It will look like <code style="background: #f0f4f8; padding: 2px 5px; border-radius: 4px; color: #333;">https://trinket.io/embed/python3/&lt;trinket-id&gt;</code>. Paste that into the <code style="background: #f0f4f8; padding: 2px 5px; border-radius: 4px; color: #333;">src</code> attribute below.</p>
+
+    <details style="margin: 16px 0;">
+      <summary><strong>Try It: Variables</strong></summary>
+      <div style="padding: 8px 0; color: #333;">
+        <p>Instructions here -- describe what the student should change and run.</p>
+        <iframe src="https://trinket.io/embed/python/3d8d7ce66b"
+          width="100%" height="350" frameborder="0"
+          marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </details>
+
+    <p style="font-size: 0.92em; color: #555;"><code>showInstructions=true</code> shows any instructions text saved with the trinket; <code>start=result</code> runs the program automatically when the embed loads. Adjust <code>height</code> based on how much output the program produces (250-400px is typical).</p>
+  </div>
+
+</div>
