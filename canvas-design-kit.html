@@ -80,15 +80,16 @@
   -----------------------------------------------------------------------
   1. Page header
   2. Section heading (dp-has-icon, line-and-icon divider)
-  3. Callout boxes (key rule, tip, warning)
-  4. Blockquote / template format
-  5. Multi-color cards (small groups of related items, 5-color rotation)
-  6. Numbered step blocks
-  7. Standard data table (sequences, comparisons, rubrics -- one shared
+  3. Callout boxes (key rule, tip, warning -- simple and with heading)
+  4. Feature boxes (Activity, Deliverable -- full-border rounded cards)
+  5. Blockquote / template format
+  6. Multi-color cards (small groups of related items, 5-color rotation)
+  7. Numbered step blocks
+  8. Standard data table (sequences, comparisons, rubrics -- one shared
      style, with notes on optional summary row and points column)
-  8. Two-column "avoid vs do this" comparison table
-  9. Code blocks (<pre><code>, 16px)
-  10. Interactive elements (reveal answer, "Try It" embedded sandbox)
+  9. Two-column "avoid vs do this" comparison table
+  10. Code blocks (<pre><code>, 16px)
+  11. Interactive elements (reveal answer, "Try It" embedded sandbox)
 -->
 
 <div id="dp-wrapper" class="dp-wrapper dp-flat-sections variation-2">
@@ -143,7 +144,9 @@
         <span class="dp-icon-content" style="display: none;">&nbsp;</span>
       </i>Callout Boxes
     </h3>
-    <p>Three callout types, used sparingly. Default to the navy "key rule" box for most callouts -- the other two are for genuinely distinct situations.</p>
+    <p>Three callout types, used sparingly. Default to the navy "key rule" box for most callouts -- the other two are for genuinely distinct situations. Each type comes in two forms: <strong>simple</strong> (a short label baked into the body text, using a <code>&lt;p&gt;</code> tag) and <strong>with heading</strong> (a named label on its own line above the body, using a <code>&lt;div&gt;</code>). Use the heading form when the callout has a distinct name, runs multiple paragraphs, or needs to be scannable in a group of similar callouts.</p>
+
+    <h4 style="color: #002e5d; margin-top: 1.4em; margin-bottom: 0.6em;">Simple callouts</h4>
 
     <p style="background-color: #f0f4f8; border-left: 4px solid #002e5d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
       <strong>Key Rule:</strong> The default callout. Use for important rules, definitions to remember, or framing statements.
@@ -156,10 +159,70 @@
     <p style="background-color: #fef2f2; border-left: 4px solid #9f1239; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
       <strong>Watch Out:</strong> Use the muted rose/red callout only for real warnings -- common mistakes that will cost students points, or steps that are easy to get wrong.
     </p>
+
+    <h4 style="color: #002e5d; margin-top: 1.6em; margin-bottom: 0.6em;">With heading line</h4>
+    <p style="font-size: 0.92em; color: #555; margin-bottom: 12px;">Replace the <code>&lt;p&gt;</code> tag with a <code>&lt;div&gt;</code> and add a heading <code>&lt;div&gt;</code> at the top. The heading uses the same accent color as the border. Optional: a single emoji before the label works well for lighter-toned callouts like "AI Playground" -- avoid emoji on warnings or key rules.</p>
+
+    <div style="background-color: #f0f4f8; border-left: 4px solid #002e5d; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <div style="color: #002e5d; font-weight: bold; margin-bottom: 6px; font-size: 0.95em;">Key Rule: A Named Rule</div>
+      <p style="margin: 0;">Use this form when a key rule has a specific name worth calling out on its own line, or when the body runs more than one sentence and the label needs to be clearly separated from the content.</p>
+    </div>
+
+    <div style="background-color: #f0fdfa; border-left: 4px solid #0d9488; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <div style="color: #0f766e; font-weight: bold; margin-bottom: 6px; font-size: 0.95em;">Pro Tip: A Named Tip</div>
+      <p style="margin: 0;">Use this form for a tip that has a specific label. Teal works well for any "helpful hint" or "in practice" callout with a distinct name.</p>
+    </div>
+
+    <div style="background-color: #f5f3ff; border-left: 4px solid #5b21b6; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <div style="color: #5b21b6; font-weight: bold; margin-bottom: 6px; font-size: 0.95em;">&#10024; AI Playground</div>
+      <p style="margin: 0;">Indigo works well for AI prompt exercises and tool-based activities. Paste your prompt here and tell students what to do with it. This is the only callout color where an emoji in the heading label is encouraged.</p>
+    </div>
+
+    <div style="background-color: #fef2f2; border-left: 4px solid #9f1239; padding: 12px 16px; margin: 16px 0; border-radius: 0 6px 6px 0; color: #333;">
+      <div style="color: #9f1239; font-weight: bold; margin-bottom: 6px; font-size: 0.95em;">Watch Out: A Specific Mistake</div>
+      <p style="margin: 0;">Use this form when you want to call out a specific named mistake rather than a generic warning. Keep rose/red reserved for real errors and common costly mistakes only.</p>
+    </div>
   </div>
 
   <!-- ================================================================= -->
-  <!-- 4. BLOCKQUOTE -->
+  <!-- 4. FEATURE BOXES (Activity, Deliverable) -->
+  <!-- ================================================================= -->
+  <div class="dp-content-block" style="background-color: #ffffff;">
+    <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
+      <i class="dp-icon fas fa-star" style="border-color: #002e5d; border-width: 2px; color: #002e5d;" aria-hidden="true">
+        <span class="dp-icon-content" style="display: none;">&nbsp;</span>
+      </i>Feature Boxes (Activity, Deliverable)
+    </h3>
+    <p>Feature boxes are larger, full-border rounded containers for structured content that stands apart from prose -- primarily in-class activities and submission/deliverable blocks. Unlike callout boxes (left-border highlights), feature boxes are standalone cards that intentionally interrupt the reading flow. Use them only when the content has multiple lines of structure (a numbered list of steps, or a set of criteria) -- a single sentence belongs in a callout box instead.</p>
+
+    <h4 style="color: #002e5d; margin-top: 1.4em; margin-bottom: 0.6em;">Activity (teal) -- for exercises and in-class tasks</h4>
+    <p style="font-size: 0.92em; color: #555; margin-bottom: 12px;">Place after a concept has been introduced, when students should <em>do</em> something. Typically contains numbered steps. The heading text can be "Activity", "Try This", or "In-Class Exercise" -- use "Activity" by default for consistency.</p>
+
+    <div style="margin: 24px 0; padding: 20px 24px; background: #f0fdfa; border-radius: 8px; border: 1px solid #99f6e4; color: #333;">
+      <div style="font-size: 1.15em; font-weight: bold; color: #0f766e; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #99f6e4;">Activity</div>
+      <ol style="margin: 0; padding-left: 20px;">
+        <li style="margin-bottom: 8px;"><p style="margin: 0;"><strong>First task.</strong> Describe what the student should do for this step.</p></li>
+        <li style="margin-bottom: 8px;"><p style="margin: 0;"><strong>Second task.</strong> Describe what the student should do for this step.</p></li>
+        <li style="margin-bottom: 0;"><p style="margin: 0;"><strong>Third task.</strong> Describe what the student should do for this step.</p></li>
+      </ol>
+    </div>
+
+    <h4 style="color: #002e5d; margin-top: 1.6em; margin-bottom: 0.6em;">Deliverable (steel blue) -- for submission and grading criteria</h4>
+    <p style="font-size: 0.92em; color: #555; margin-bottom: 12px;">Place at or near the end of an assignment page to clearly state what is being submitted and what "complete" looks like. Steel blue signals a required output.</p>
+
+    <div style="margin: 24px 0; padding: 20px 24px; background: #eff6ff; border-radius: 8px; border: 1px solid #bfdbfe; color: #333;">
+      <div style="font-size: 1.15em; font-weight: bold; color: #1e40af; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #bfdbfe;">Deliverable</div>
+      <p style="margin: 0 0 10px;"><strong>Submit: Brief description of what is being turned in.</strong></p>
+      <p style="margin: 0 0 6px;">Completion criteria:</p>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>First criterion -- describe what "done" looks like for this item</li>
+        <li>Second criterion -- describe what "done" looks like for this item</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 5. BLOCKQUOTE (formerly 4) -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -176,7 +239,7 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- 5. MULTI-COLOR CARDS -->
+  <!-- 6. MULTI-COLOR CARDS -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -213,7 +276,7 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- 6. NUMBERED STEP BLOCKS -->
+  <!-- 7. NUMBERED STEP BLOCKS -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -241,7 +304,7 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- 7. STANDARD DATA TABLE (sequences, comparisons, rubrics) -->
+  <!-- 8. STANDARD DATA TABLE (sequences, comparisons, rubrics) -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -294,7 +357,7 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- 8. AVOID VS DO THIS COMPARISON TABLE -->
+  <!-- 9. AVOID VS DO THIS COMPARISON TABLE -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -329,7 +392,7 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- 9. CODE BLOCKS -->
+  <!-- 10. CODE BLOCKS -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
@@ -348,7 +411,7 @@ print(greet("world"))</code></pre>
   </div>
 
   <!-- ================================================================= -->
-  <!-- 10. INTERACTIVE ELEMENTS (details/summary) -->
+  <!-- 11. INTERACTIVE ELEMENTS (details/summary) -->
   <!-- ================================================================= -->
   <div class="dp-content-block" style="background-color: #ffffff;">
     <h3 class="dp-has-icon" style="border-color: #002e5d; border-width: 2px;">
